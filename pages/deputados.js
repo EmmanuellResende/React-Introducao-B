@@ -5,9 +5,9 @@ export default function Deputados() {
 
   const [deputados, setDeputados] = useState([])
 
-  useEffect(()=>{
-    apiDeputados.get('deputados').then(resultado=>{
-        setDeputados(resultado.data.dados);
+  useEffect(() => {
+    apiDeputados.get('deputados').then(resultado => {
+      setDeputados(resultado.data.dados);
     })
   }, [])
 
@@ -15,7 +15,7 @@ export default function Deputados() {
     <>
       <h1>Deputados</h1>
 
-      {deputados.map(item=>(
+      {deputados.map(item => (
         <img title={item.nome} key={item.id} src={item.urlFoto} width="150px" />
       ))}
     </>
